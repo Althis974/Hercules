@@ -6,7 +6,7 @@
 #    By: rlossy <marvin@le-101.fr>                  +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/03/28 10:09:06 by rlossy       #+#   ##    ##    #+#        #
-#    Updated: 2018/03/28 13:02:22 by rlossy      ###    #+. /#+    ###.fr      #
+#    Updated: 2018/03/29 11:52:54 by rlossy      ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -22,6 +22,10 @@ C='\033[36m'
 D='\033[0m'
 
 #Run the fork bomb in background
+clear
+sleep 1
+./bomb/warning.sh
+sleep 1
 echo "${R}DANGER ! MARES OF DIOMEDES ARE COMING !"
 ./bomb/manger&
 
@@ -33,11 +37,17 @@ echo ""
 echo "${G}LET'S STOP THEM !"
 echo ""
 echo "${Y}*EARTHQUAKE*"
-echo ""
-kill -9 $(top -l 1 | grep manger | awk '{print $1}')
+kill -6 $(top -l 1 | grep manger | awk '{print $1}')
+
+sleep 1
 
 #Clean all
+echo ""
+sleep 1
 echo "${Y}*BROOM THE CORPSES*"
+echo ""
+gcc ./strike_back/broom.c -o ./strike_back/broom
+./strike_back/broom
 rm -rf *.poo
 echo ""
 
@@ -50,6 +60,11 @@ do
 	sleep 1
 	i=$[$i + 1]
 done
+
+clear
+sh ./bomb/alert.sh
+sleep 1
+clear
 echo ""
 echo "${P}TIME TO STRIKE BACK !"
 echo ""
