@@ -19,8 +19,8 @@ require "colorize"
 require "colorized_string"
 
 # Credentials
-UID = "0a703d2ff1289873a04fffde34b77e33a31ef4b2c5270bf27a25388dbbb53e34"
-SECRET = "9bb09210d0325edc20798c63ff97959d925bf3c87b3d6022a4e9973fce72c04d"
+UID = "_"
+SECRET = "_"
 
 # Create the client with your credentials
 client = OAuth2::Client.new(UID, SECRET, site: "https://api.intra.42.fr")
